@@ -133,43 +133,6 @@ class HitCard:
             return self.generateResult(0, '打卡失败', res) if res != '打卡成功' else self.generateResult(1, res)
         except Exception as e:
             return self.generateResult(1, '打卡异常', str(e))
-        # if isDebug:
-        #     print(' getCsrfTokenAndWorkflowId() ==> (csrfToken, workflowId)', csrfToken, workflowId)
-        # if csrfToken == '' or csrfToken is None: return self.generateResult(1001, 'csrfToken is null')
-        # if workflowId == '' or workflowId is None: return self.generateResult(1002, 'workflowId is null')
-        #
-        # formData = self.getPreview(csrfToken, workflowId)
-        # if isDebug:
-        #     print(' getCsrfTokenAndWorkflowId() ==> (formData)', formData)
-        # if formData == '' or formData is None: return self.generateResult(1003, 'formData[1] is null')
-        #
-        # url, stepId = self.getRender(csrfToken, formData)
-        # if isDebug:
-        #     print(' getRender() ==> (url, stepId)', url, stepId)
-        # if url == '' or url is None: return self.generateResult(1004, 'url is null')
-        # if stepId == '' or stepId is None: return self.generateResult(1005, 'stepId is null')
-        #
-        # formData, fields = self.getSumbitData(stepId, csrfToken)
-        # if isDebug:
-        #     print(' getSumbitData ==> (formData, fields)', formData, fields)
-        # if formData == '' or formData is None:
-        #     return self.generateResult(1006, 'formData[2] is null')
-        # if fields == '' or fields is None:
-        #     return self.generateResult(1007, 'fields is null')
-        #
-        # res = self.listNextStepsUsers(stepId, formData, fields, csrfToken)
-        # if isDebug:
-        #     print(' listNextStepsUsers ==> (res)', res)
-        # if res != 'SUCCEED':
-        #     return self.generateResult(1008, 'listNextStepsUsers is error', res)
-        #
-        # res = self.doAction(stepId, formData, fields, csrfToken)
-        # if (isDebug):
-        #     print(' doAction ==> (res)', res)
-        # if res != '打卡成功':
-        #     return self.generateResult(1009, 'doAction is error', res)
-        #
-        # return self.generateResult(1100, res)
 
     def generateResult(self, code, msg, data=None):
         req = {
